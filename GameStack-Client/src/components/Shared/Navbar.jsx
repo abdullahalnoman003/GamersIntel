@@ -23,7 +23,7 @@ const Navbar = () => {
         <li><a>Item 3</a></li>
       </ul>
     </div>
-    <Link to="/" className="btn bg-transparent shadow-none border-transparent  text-xl gap-0"> <img src="/images/logo.png" alt="GameStack Logo" className="w-15"/>GameStack</Link>
+    <Link to="/" className="btn bg-transparent shadow-none border-transparent  text-xl gap-0"> <img src="/images/logo.png" alt="GameStack Logo" className="w-15"/>GamersIntel</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">

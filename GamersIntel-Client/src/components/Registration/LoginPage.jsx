@@ -73,7 +73,7 @@ return (
                 GamersIntel
               </h2>
               <p className="text-base text-purple-100">
-                Level Up Your Gaming Experience
+                Your Gaming Memory System
               </p>
             </div>
             
@@ -85,13 +85,13 @@ return (
           {/* Right Side - Login Form */}
           <div className="p-10 bg-gradient-to-b from-black to-gray-900">
             <div className="text-center mb-8">
-              <h1 className="text-4xl font-black text-white uppercase tracking-wide mb-3">
-                Player Login
+              <h1 className="text-3xl font-extrabold text-white mb-2">
+                Welcome Back
               </h1>
               <p className="text-sm text-gray-400">
-                Enter the Arena and Join Your Squad
+                Sign in to track your gaming journey
               </p>
-              <div className="mt-4 h-0.5 w-24 bg-purple-500 mx-auto"></div>
+              <div className="mt-4 h-0.5 w-20 bg-purple-500 mx-auto"></div>
             </div>
 
             <form onSubmit={handleEmailLogin} className="space-y-5">

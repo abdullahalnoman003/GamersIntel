@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import HomeLayout from "../layouts/HomeLayout";
 import NotAvailable from "../components/Shared/NotAvailable";
-import Login from "../components/Registration/LoginPage";
 import RegistrationPage from "../components/Registration/RegistrationPage";
+import LoginPage from "../components/Registration/LoginPage";
 import Hero from "../components/home/Hero";
 import Solution from "../components/home/Solution";
 import Features from "../components/home/Features";
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
         },
         {
             path:"/login",
-            element: <Login></Login>,
+            element: <LoginPage></LoginPage>
         },
         {
             path:"/registration",

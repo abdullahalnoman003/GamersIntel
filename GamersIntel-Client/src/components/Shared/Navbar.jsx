@@ -5,7 +5,7 @@ import { HiLightningBolt } from "react-icons/hi";
 
 const Navbar = () => {
   return (
-    <div className="navbar  from-gray-900 via-purple-900/50 to-gray-900 shadow-lg border-b-2 border-purple-500/30 backdrop-blur-md fixed top-0 z-50">
+    <div className="navbar bg-gradient-to-r from-black via-gray-900 to-black shadow-xl border-b border-purple-500/30 backdrop-blur-md fixed top-0 z-50">
       {/* Mobile Dropdown */}
       <div className="navbar-start">
         <div className="dropdown">
@@ -14,18 +14,20 @@ const Navbar = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
             </svg>
           </div>
-          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-xl bg-black/95 border border-purple-500/50 rounded-box w-52">
-            <li><Link to="/games" className="text-gray-300 hover:text-cyan-400 font-semibold"><FaGamepad /> Games</Link></li>
-            <li><Link to="/leaderboard" className="text-gray-300 hover:text-cyan-400 font-semibold"><FaTrophy /> Leaderboard</Link></li>
-            <li><Link to="/about" className="text-gray-300 hover:text-cyan-400 font-semibold">About</Link></li>
+          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-xl bg-black border border-purple-500/50 rounded-lg w-52">
+            <li><Link to="/" className="text-gray-300 hover:text-purple-400 font-semibold">Home</Link></li>
+            <li><a href="#features" className="text-gray-300 hover:text-purple-400 font-semibold">Features</a></li>
+            <li><a href="#how-it-works" className="text-gray-300 hover:text-purple-400 font-semibold">How It Works</a></li>
+            <li><Link to="/about" className="text-gray-300 hover:text-purple-400 font-semibold">About</Link></li>
           </ul>
         </div>
         
         {/* Logo */}
-        <Link to="/" className="btn text-xl gap-1 border-0 bg-transparent"> 
-          <img src="/images/logo.png" alt="GamersIntel Logo" className="w-10 h-10  "/>
-          <span className="text-primary">Gamers</span ><span className="text-secondary">Intel</span>
-          <HiLightningBolt className="text-cyan-400 text-xl animate-pulse hidden sm:block" />
+        <Link to="/" className="btn text-xl gap-1 border-0 bg-transparent hover:bg-transparent"> 
+          <img src="/images/logo.png" alt="GamersIntel Logo" className="w-10 h-10"/>
+          <span className="text-primary font-extrabold text-2xl">Gamers</span><span className="text-secondary font-extrabold text-2xl">Intel</span>
+                  <HiLightningBolt className="text-cyan-400 text-xl animate-pulse hidden sm:block" />
+
         </Link>
       </div>
 
@@ -34,31 +36,33 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1 gap-2">
           <li>
             <NavLink 
-              to="/games" 
+              to="/" 
               className={({ isActive }) => 
                 `font-bold uppercase tracking-wide transition-all duration-300 ${
                   isActive 
-                    ? 'text-cyan-400 bg-purple-500/20 border-b-2 border-cyan-400' 
-                    : 'text-gray-300 hover:text-cyan-400 hover:bg-purple-500/10'
+                    ? 'text-purple-400 bg-purple-500/20 border-b-2 border-purple-400' 
+                    : 'text-gray-300 hover:text-purple-400 hover:bg-purple-500/10'
                 }`
               }
             >
-              <FaGamepad className="text-lg" /> Games
+              Home
             </NavLink>
           </li>
           <li>
-            <NavLink 
-              to="/leaderboard" 
-              className={({ isActive }) => 
-                `font-bold uppercase tracking-wide transition-all duration-300 ${
-                  isActive 
-                    ? 'text-cyan-400 bg-purple-500/20 border-b-2 border-cyan-400' 
-                    : 'text-gray-300 hover:text-cyan-400 hover:bg-purple-500/10'
-                }`
-              }
+            <a 
+              href="#features" 
+              className="font-bold uppercase tracking-wide transition-all duration-300 text-gray-300 hover:text-purple-400 hover:bg-purple-500/10"
             >
-              <FaTrophy className="text-lg" /> Leaderboard
-            </NavLink>
+              Features
+            </a>
+          </li>
+          <li>
+            <a 
+              href="#how-it-works" 
+              className="font-bold uppercase tracking-wide transition-all duration-300 text-gray-300 hover:text-purple-400 hover:bg-purple-500/10"
+            >
+              How It Works
+            </a>
           </li>
           <li>
             <NavLink 
@@ -66,8 +70,8 @@ const Navbar = () => {
               className={({ isActive }) => 
                 `font-bold uppercase tracking-wide transition-all duration-300 ${
                   isActive 
-                    ? 'text-cyan-400 bg-purple-500/20 border-b-2 border-cyan-400' 
-                    : 'text-gray-300 hover:text-cyan-400 hover:bg-purple-500/10'
+                    ? 'text-purple-400 bg-purple-500/20 border-b-2 border-purple-400' 
+                    : 'text-gray-300 hover:text-purple-400 hover:bg-purple-500/10'
                 }`
               }
             >
@@ -81,7 +85,7 @@ const Navbar = () => {
       <div className="navbar-end gap-2">
         <NavLink  
           to="/login" 
-          className="btn text-white font-black uppercase tracking-wider shadow-lg shadow-purple-500/50 hover:shadow-cyan-500/50"
+          className="btn bg-purple-600 hover:bg-purple-700 border-0 text-white font-bold uppercase tracking-wider transition-colors"
         >
           <FaUser />
           <span className="hidden sm:inline">Get Started</span>

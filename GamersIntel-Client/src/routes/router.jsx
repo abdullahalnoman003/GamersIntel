@@ -7,6 +7,10 @@ import Hero from "../components/home/Hero";
 import Solution from "../components/home/Solution";
 import Features from "../components/home/Features";
 import CTA from "../components/home/CTA";
+import PublicRoute from "../Authentication/publicRoute";
+import Dashboard from "../components/user/Dashboard";
+import Profile from "../components/user/profile";
+import Messages from "../components/user/Messages";
 const router = createBrowserRouter([
 {
     path:"/",
@@ -23,11 +27,23 @@ const router = createBrowserRouter([
         },
         {
             path:"/login",
-            element: <LoginPage></LoginPage>
+            element: <PublicRoute><LoginPage></LoginPage></PublicRoute>, 
         },
         {
             path:"/registration",
-            element: <RegistrationPage></RegistrationPage>  ,
+            element: <PublicRoute><RegistrationPage></RegistrationPage></PublicRoute>   ,
+        },
+        {
+            path:"/dashboard",
+            element: <Dashboard></Dashboard>  ,
+        },
+        {
+            path:"/profile",
+            element: <Profile></Profile>  ,
+        },
+        {
+            path:"/messages",
+            element: <Messages></Messages>  ,
         },
         {
             path:"/*",

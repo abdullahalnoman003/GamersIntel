@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { FaGamepad, FaTrophy, FaUser, FaSignOutAlt } from "react-icons/fa";
+import { FaUser, FaSignOutAlt } from "react-icons/fa";
 import { MdDashboard, MdMessage } from "react-icons/md";
 import { HiLightningBolt } from "react-icons/hi";
 import { AuthContext } from "../../Context/AuthContext";
@@ -85,7 +85,7 @@ const Navbar = () => {
       </div>
 
       {/* Right Side - Get Started Button or User Profile */}
-      <div className="navbar-end gap-2">
+      <div className="navbar-end pr-5 gap-2">
         {user ? (
           <div className="dropdown dropdown-end">
             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar ring-2 ring-purple-500 ring-offset-2 ring-offset-black">

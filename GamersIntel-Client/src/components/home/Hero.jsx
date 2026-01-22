@@ -1,155 +1,143 @@
 import { Link } from 'react-router-dom';
-import { FaSearch, FaGamepad, FaTrophy, FaStar, FaSkull, FaFire } from 'react-icons/fa';
+import { FaSearch, FaGamepad } from 'react-icons/fa';
 import { HiLightningBolt } from 'react-icons/hi';
 import { MdTrendingUp } from 'react-icons/md';
-import { GiSwordman, GiTrophy } from 'react-icons/gi';
+import { useContext } from 'react';
+import { AuthContext } from '../../Context/AuthContext';
 
 const Hero = () => {
+    const {user} = useContext(AuthContext);
     return (
         <div className="relative min-h-screen bg-black flex items-center justify-center overflow-hidden pt-20">
-            {/* Aggressive Background Effects */}
-            <div className="absolute inset-0">
-                {/* Neon Grid */}
-                <div className="absolute inset-0 opacity-20" style={{
-                    backgroundImage: `
-                        linear-gradient(rgba(147, 51, 234, 0.2) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(147, 51, 234, 0.2) 1px, transparent 1px)
-                    `,
-                    backgroundSize: '50px 50px'
-                }}></div>
-                
-                {/* Intense Glows */}
-                <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-600 rounded-full mix-blend-screen filter blur-3xl animate-pulse opacity-30"></div>
-                <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-500 rounded-full mix-blend-screen filter blur-3xl animate-pulse opacity-30" style={{animationDelay: '1s'}}></div>
-                <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-pink-600 rounded-full mix-blend-screen filter blur-3xl animate-pulse opacity-20" style={{animationDelay: '2s'}}></div>
-            </div>
+            {/* Background Image Overlay - Add your image to /public/images/hero-bg.jpg */}
+            <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{
+                backgroundImage: `url('/images/logo.png')`,
+                backgroundPosition: 'center',
+                backgroundSize: 'cover'
+            }}></div>
+            
+            {/* The dark overlay of a */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/70 to-black"></div>
 
-            {/* Scanline Effect */}
-            <div className="absolute inset-0 pointer-events-none" style={{
-                backgroundImage: 'linear-gradient(0deg, transparent 50%, rgba(147, 51, 234, 0.03) 50%)',
-                backgroundSize: '100% 4px'
+            {/* Subtle Grid Background */}
+            <div className="absolute inset-0 opacity-10" style={{
+                backgroundImage: `
+                    linear-gradient(rgba(147, 51, 234, 0.1) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(147, 51, 234, 0.1) 1px, transparent 1px)
+                `,
+                backgroundSize: '50px 50px'
             }}></div>
 
-            {/* Floating Aggressive Icons */}
-            <div className="absolute inset-0 pointer-events-none">
-                <FaSkull className="absolute top-20 left-10 text-red-500/30 text-6xl animate-pulse" />
-                <FaFire className="absolute top-40 right-20 text-orange-500/30 text-7xl animate-bounce" style={{animationDelay: '0.5s'}} />
-                <GiSwordman className="absolute bottom-32 left-32 text-purple-500/30 text-8xl animate-pulse" style={{animationDelay: '1s'}} />
-                <FaTrophy className="absolute bottom-40 right-40 text-yellow-500/30 text-6xl animate-bounce" style={{animationDelay: '1.5s'}} />
+            {/* Gentle Background Glow */}
+            <div className="absolute inset-0 opacity-20">
+                <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-600 rounded-full filter blur-3xl"></div>
+                <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-600 rounded-full filter blur-3xl"></div>
             </div>
 
             {/* Main Content */}
             <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                {/* Aggressive Badge */}
-                <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600/30 via-pink-600/30 to-cyan-600/30 border-2 border-purple-500 rounded-none skew-x-[-5deg] mb-8 shadow-[0_0_20px_rgba(147,51,234,0.5)] animate-pulse">
-                    <HiLightningBolt className="text-yellow-400 text-xl" />
-                    <span className="text-cyan-300 font-black text-sm tracking-widest uppercase skew-x-[5deg]">⚡ DOMINATE YOUR GAMING LIBRARY ⚡</span>
+                {/* Badge */}
+                <div className="inline-flex items-center gap-2 px-6 py-2 bg-purple-600/20 border border-purple-500/40 rounded-full mb-6 hover:bg-purple-600/30 hover:border-purple-500/60 transition-all duration-300">
+                    <HiLightningBolt className="text-yellow-400" />
+                    <span className="text-purple-300 font-semibold text-sm uppercase creepster-regular tracking-wider">Your Gaming Memory System</span>
                 </div>
 
-                {/* Main Headline - Aggressive */}
-                <h1 className="text-6xl md:text-8xl font-black text-white mb-6 leading-none tracking-tight">
-                    <span className="block text-white drop-shadow-[0_0_30px_rgba(147,51,234,0.8)] animate-pulse">DOMINATE</span>
-                    <span className="bitcount-single block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-cyan-400 drop-shadow-[0_0_30px_rgba(236,72,153,0.8)] mt-2">
-                        YOUR GAMING
+                {/* Main Headline with Custom Font */}
+                <h1 className="poetsen-one-regular text-5xl md:text-7xl text-white mb-6 leading-tight">
+                    DOMINATE YOUR
+                    <br />
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400">
+                        GAMING LEGACY
                     </span>
-                    <span className="block text-white drop-shadow-[0_0_30px_rgba(6,182,212,0.8)] mt-2">LEGACY</span>
                 </h1>
 
-                {/* Aggressive Subheadline */}
-                <p className="text-xl md:text-2xl text-cyan-300 mb-8 max-w-3xl mx-auto font-bold uppercase tracking-wide">
-                    <span className="text-pink-500">▸</span> Track Every Kill <span className="text-pink-500">▸</span> Rate Every Boss <span className="text-pink-500">▸</span> Own Your Stats <span className="text-pink-500">▸</span>
+                {/* Subheadline */}
+                <p className="galdeano-regular text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                    Track every game. Rate every experience. Remember every moment.
                 </p>
 
-                {/* Aggressive Stats */}
-                <div className="flex flex-wrap justify-center gap-6 mb-12">
-                    <div className="relative group">
-                        <div className="absolute inset-0 bg-purple-600/50 blur-xl group-hover:blur-2xl transition-all"></div>
-                        <div className="relative bg-black border-2 border-purple-500 px-8 py-4 transform skew-x-[-5deg] hover:skew-x-0 transition-transform">
-                            <div className="text-4xl font-black text-purple-400 skew-x-[5deg] group-hover:skew-x-0">10K+</div>
-                            <div className="text-xs text-gray-400 uppercase tracking-wider skew-x-[5deg] group-hover:skew-x-0">GAMES</div>
-                        </div>
+                {/* Clean Stats */}
+                <div className="flex flex-wrap justify-center gap-8 mb-10">
+                    <div className="text-center bg-purple-500/10 border border-purple-500/20 rounded-lg px-8 py-4 hover:bg-purple-500/20 hover:scale-110 hover:border-purple-500/40 transition-all duration-300">
+                        <div className="text-4xl font-bold text-purple-400">10K+</div>
+                        <div className="text-sm text-gray-400 uppercase tracking-wide">Games</div>
                     </div>
-                    <div className="relative group">
-                        <div className="absolute inset-0 bg-pink-600/50 blur-xl group-hover:blur-2xl transition-all"></div>
-                        <div className="relative bg-black border-2 border-pink-500 px-8 py-4 transform skew-x-[-5deg] hover:skew-x-0 transition-transform">
-                            <div className="text-4xl font-black text-pink-400 skew-x-[5deg] group-hover:skew-x-0">5K+</div>
-                            <div className="text-xs text-gray-400 uppercase tracking-wider skew-x-[5deg] group-hover:skew-x-0">WARRIORS</div>
-                        </div>
+                    <div className="text-center bg-pink-500/10 border border-pink-500/20 rounded-lg px-8 py-4 hover:bg-pink-500/20 hover:scale-110 hover:border-pink-500/40 transition-all duration-300">
+                        <div className="text-4xl font-bold text-pink-400">5K+</div>
+                        <div className="text-sm text-gray-400 uppercase tracking-wide">Gamers</div>
                     </div>
-                    <div className="relative group">
-                        <div className="absolute inset-0 bg-cyan-600/50 blur-xl group-hover:blur-2xl transition-all"></div>
-                        <div className="relative bg-black border-2 border-cyan-500 px-8 py-4 transform skew-x-[-5deg] hover:skew-x-0 transition-transform">
-                            <div className="text-4xl font-black text-cyan-400 skew-x-[5deg] group-hover:skew-x-0">50K+</div>
-                            <div className="text-xs text-gray-400 uppercase tracking-wider skew-x-[5deg] group-hover:skew-x-0">REVIEWS</div>
-                        </div>
+                    <div className="text-center bg-cyan-500/10 border border-cyan-500/20 rounded-lg px-8 py-4 hover:bg-cyan-500/20 hover:scale-110 hover:border-cyan-500/40 transition-all duration-300">
+                        <div className="text-4xl font-bold text-cyan-400">50K+</div>
+                        <div className="text-sm text-gray-400 uppercase tracking-wide">Reviews</div>
                     </div>
                 </div>
 
-                {/* Aggressive Search Bar */}
-                <div className="max-w-2xl mx-auto mb-12">
+                {/* Clean Search Bar */}
+                <div className="max-w-2xl mx-auto mb-10">
                     <div className="relative">
-                        <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 blur-lg opacity-50 animate-pulse"></div>
-                        <div className="relative flex items-center bg-black border-2 border-purple-500 p-1">
-                            <div className="flex-1 flex items-center bg-gray-900 p-3">
-                                <FaSearch className="text-cyan-400 text-xl mr-3 animate-pulse" />
-                                <input 
-                                    type="text" 
-                                    placeholder="⚡ SEARCH 10,000+ GAMES... (COMING SOON) ⚡"
-                                    className="flex-1 bg-transparent text-white placeholder-gray-500 outline-none font-semibold uppercase text-sm tracking-wide"
-                                    disabled
-                                />
-                                <MdTrendingUp className="text-pink-400 text-2xl ml-3" />
-                            </div>
+                        <div className="flex items-center bg-gray-900/80 border border-purple-500/40 rounded-lg p-4 hover:border-purple-500/60 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300">
+                            <FaSearch className="text-purple-400 text-xl mr-3" />
+                            <input 
+                                type="text" 
+                                placeholder="Search 10,000+ games... (Coming Soon)"
+                                className="flex-1 bg-transparent text-white placeholder-gray-500 outline-none"
+                                disabled
+                            />
+                            <MdTrendingUp className="text-cyan-400 text-2xl ml-3" />
                         </div>
                     </div>
                 </div>
 
-                {/* Aggressive CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
-                    <Link 
-                        to="/registration" 
-                        className="relative group"
+                {/* Clean CTA Buttons */}
+                
+               
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+                    
+                    {
+                        user ? (
+                            <Link 
+                        to="/dashboard" 
+                        className="px-10 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-lg hover:scale-105 hover:shadow-xl hover:shadow-purple-500/50 text-white font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-3"
                     >
-                        <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur opacity-75 group-hover:opacity-100 transition animate-pulse"></div>
-                        <div className="relative bg-black border-2 border-purple-500 px-10 py-4 font-black uppercase tracking-widest text-white hover:text-cyan-400 transition-all transform hover:scale-105 flex items-center gap-3">
-                            <FaFire className="text-2xl text-orange-500 animate-pulse" />
-                            JOIN THE ELITE
-                            <FaFire className="text-2xl text-orange-500 animate-pulse" />
-                        </div>
+                        <FaGamepad className="text-xl" />
+                        Go to Dashboard
                     </Link>
+                        ) : (
+                            <Link 
+                        to="/registration" 
+                        className="px-10 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-lg hover:scale-105 hover:shadow-xl hover:shadow-purple-500/50 text-white font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-3"
+                    >
+                        <FaGamepad className="text-xl" />
+                        Start Free
+                    </Link>
+                        )
+                    }
                     <a 
                         href="#features" 
-                        className="relative group"
+                        className="px-10 py-4 bg-transparent border-2 border-purple-500 rounded-lg hover:bg-purple-500/10 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/30 text-purple-300 hover:text-white font-bold uppercase tracking-wider transition-all duration-300"
                     >
-                        <div className="absolute -inset-1 bg-cyan-500/50 blur opacity-0 group-hover:opacity-75 transition"></div>
-                        <div className="relative bg-black border-2 border-cyan-500 px-10 py-4 font-black uppercase tracking-widest text-cyan-300 hover:text-white transition-all flex items-center gap-3">
-                            <GiSwordman className="text-2xl" />
-                            LEARN MORE
-                        </div>
+                        Learn More
                     </a>
                 </div>
 
-                {/* Aggressive Trust Indicators */}
-                <div className="flex flex-wrap items-center justify-center gap-6 text-xs uppercase tracking-widest font-bold">
-                    <div className="flex items-center gap-2 text-green-400">
-                        <div className="w-3 h-3 bg-green-500 animate-ping absolute"></div>
-                        <div className="w-3 h-3 bg-green-500 rounded-sm"></div>
-                        100% FREE
+                {/* Simple Trust Indicators */}
+                <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-400">
+                    <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                        100% Free
                     </div>
-                    <div className="flex items-center gap-2 text-cyan-400">
-                        <div className="w-3 h-3 bg-cyan-500 animate-ping absolute"></div>
-                        <div className="w-3 h-3 bg-cyan-500 rounded-sm"></div>
-                        NO BS
+                    <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                        No Credit Card
                     </div>
-                    <div className="flex items-center gap-2 text-purple-400">
-                        <div className="w-3 h-3 bg-purple-500 animate-ping absolute"></div>
-                        <div className="w-3 h-3 bg-purple-500 rounded-sm"></div>
-                        PURE GAMING
+                    <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                        Privacy First
                     </div>
                 </div>
             </div>
 
-            {/* Bottom Gradient Fade */}
+            {/* Bottom Gradient */}
             <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent"></div>
         </div>
     );

@@ -16,6 +16,7 @@ import About from "../components/Static/About";
 import Privacy from "../components/Static/Privacy";
 import Terms from "../components/Static/Terms";
 import Contact from "../components/Static/Contact";
+import FAQ from "../components/Static/FAQ";
 const router = createBrowserRouter([
 {
     path:"/",
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
         {
             path:"/contact",
             element: <Contact></Contact> ,
+        },
+        {
+            path:"/faq",
+            element: <FAQ></FAQ> ,
         },
         {
             path:"/*",

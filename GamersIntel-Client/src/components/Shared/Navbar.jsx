@@ -19,8 +19,6 @@ const Navbar = () => {
           </div>
           <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-xl bg-black border border-purple-500/50 rounded-lg w-52">
             <li><Link to="/" className="text-gray-300 hover:text-purple-400 font-semibold">Home</Link></li>
-            <li><a href="#features" className="text-gray-300 hover:text-purple-400 font-semibold">Features</a></li>
-            <li><a href="#how-it-works" className="text-gray-300 hover:text-purple-400 font-semibold">How It Works</a></li>
             <li><Link to="/about" className="text-gray-300 hover:text-purple-400 font-semibold">About</Link></li>
           </ul>
         </div>
@@ -50,22 +48,6 @@ const Navbar = () => {
             >
               Home
             </NavLink>
-          </li>
-          <li>
-            <a 
-              href="#features" 
-              className="font-bold uppercase tracking-wide transition-all duration-300 text-gray-300 hover:text-purple-400 hover:bg-purple-500/10"
-            >
-              Features
-            </a>
-          </li>
-          <li>
-            <a 
-              href="#how-it-works" 
-              className="font-bold uppercase tracking-wide transition-all duration-300 text-gray-300 hover:text-purple-400 hover:bg-purple-500/10"
-            >
-              How It Works
-            </a>
           </li>
           <li>
             <NavLink 

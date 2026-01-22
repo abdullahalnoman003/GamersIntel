@@ -26,7 +26,7 @@ const Navbar = () => {
         </div>
         
         {/* Logo */}
-        <Link to="/" className="btn text-xl gap-1 border-0 bg-transparent hover:bg-transparent"> 
+        <Link to="/" className="btn bitcount-single text-xl gap-1 border-0 bg-transparent hover:bg-transparent"> 
           <img src="/images/logo.png" alt="GamersIntel Logo" className="w-10 h-10"/>
           <span className="text-primary font-extrabold text-2xl">Gamers</span><span className="text-secondary font-extrabold text-2xl">Intel</span>
                   <HiLightningBolt className="text-cyan-400 text-xl animate-pulse hidden sm:block" />

@@ -10,13 +10,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           
           {/* Brand Section */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-2 mb-4">
+          <div className="space-y-4 ">
+            <div className="flex items-center gap-2 mb-4 bitcount-single">
               <img src="/images/logo.png" alt="GamersIntel Logo" className="w-10 h-10"/>
               <span className="text-primary text-2xl font-extrabold">Gamers</span><span className="text-secondary text-2xl font-extrabold">Intel</span>
                       <HiLightningBolt className="text-cyan-400 text-xl animate-pulse hidden sm:block" />
             </div>
-            <p className="text-gray-400 leading-relaxed">
+            <p className="text-gray-400  leading-relaxed">
               Track, manage, and remember your gaming journey. Intel for games  your personal gaming memory system.
             </p>
             <div className="flex items-center gap-2 text-purple-400">
@@ -32,28 +32,28 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               <li>
-                <Link to="/" className="hover:text-purple-400 transition-colors duration-300 flex items-center gap-2 group">
-                  <span className="text-purple-400 group-hover:translate-x-1 transition-transform">▶</span> Home
+                <Link to="/" className="hover:text-purple-400 transition-colors duration-300">
+                  Home
                 </Link>
               </li>
               <li>
-                <a href="#features" className="hover:text-purple-400 transition-colors duration-300 flex items-center gap-2 group">
-                  <span className="text-purple-400 group-hover:translate-x-1 transition-transform">▶</span> Features
+                <a href="#features" className="hover:text-purple-400 transition-colors duration-300">
+                  Features
                 </a>
               </li>
               <li>
-                <a href="#how-it-works" className="hover:text-purple-400 transition-colors duration-300 flex items-center gap-2 group">
-                  <span className="text-purple-400 group-hover:translate-x-1 transition-transform">▶</span> How It Works
+                <a href="#how-it-works" className="hover:text-purple-400 transition-colors duration-300">
+                  How It Works
                 </a>
               </li>
               <li>
-                <Link to="/about" className="hover:text-purple-400 transition-colors duration-300 flex items-center gap-2 group">
-                  <span className="text-purple-400 group-hover:translate-x-1 transition-transform">▶</span> About Us
+                <Link to="/about" className="hover:text-purple-400 transition-colors duration-300">
+                  About Us
                 </Link>
               </li>
               <li>
-                <Link to="/login" className="hover:text-purple-400 transition-colors duration-300 flex items-center gap-2 group">
-                  <span className="text-purple-400 group-hover:translate-x-1 transition-transform">▶</span> Get Started
+                <Link to="/login" className="hover:text-purple-400 transition-colors duration-300">
+                  Get Started
                 </Link>
               </li>
             </ul>
@@ -66,28 +66,28 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               <li>
-                <Link to="/about" className="hover:text-purple-400 transition-colors duration-300 flex items-center gap-2 group">
-                  <span className="text-purple-400 group-hover:translate-x-1 transition-transform">▶</span> About Us
+                <Link to="/about" className="hover:text-purple-400 transition-colors duration-300">
+                  About Us
                 </Link>
               </li>
               <li>
-                <Link to="/faq" className="hover:text-purple-400 transition-colors duration-300 flex items-center gap-2 group">
-                  <span className="text-purple-400 group-hover:translate-x-1 transition-transform">▶</span> FAQ
+                <Link to="/faq" className="hover:text-purple-400 transition-colors duration-300">
+                  FAQ
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-purple-400 transition-colors duration-300 flex items-center gap-2 group">
-                  <span className="text-purple-400 group-hover:translate-x-1 transition-transform">▶</span> Contact Us
+                <Link to="/contact" className="hover:text-purple-400 transition-colors duration-300">
+                  Contact Us
                 </Link>
               </li>
               <li>
-                <Link to="/privacy" className="hover:text-cyan-400 transition-colors duration-300 flex items-center gap-2 group">
-                  <span className="text-pink-400 group-hover:translate-x-1 transition-transform">▶</span> Privacy Policy
+                <Link to="/privacy" className="hover:text-cyan-400 transition-colors duration-300">
+                  Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link to="/terms" className="hover:text-cyan-400 transition-colors duration-300 flex items-center gap-2 group">
-                  <span className="text-pink-400 group-hover:translate-x-1 transition-transform">▶</span> Terms of Service
+                <Link to="/terms" className="hover:text-cyan-400 transition-colors duration-300">
+                  Terms of Service
                 </Link>
               </li>
             </ul>

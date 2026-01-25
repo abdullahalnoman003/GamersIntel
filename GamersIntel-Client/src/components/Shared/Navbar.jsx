@@ -18,18 +18,18 @@ const Navbar = () => {
             </svg>
           </div>
           <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-xl bg-black border border-purple-500/50 rounded-lg w-52">
-            <li><Link to="/" className="text-gray-300 hover:text-purple-400 font-semibold">Home</Link></li>
-            <li><Link to="/about" className="text-gray-300 hover:text-purple-400 font-semibold">About</Link></li>
+            <li><NavLink to="/" className="text-gray-300 hover:text-purple-400 font-semibold">Home</NavLink></li>
+            <li><NavLink to="/about" className="text-gray-300 hover:text-purple-400 font-semibold">About</NavLink></li>
           </ul>
         </div>
         
         {/* Logo */}
-        <Link to="/" className="btn bitcount-single text-xl gap-1 border-0 bg-transparent hover:bg-transparent"> 
+        <NavLink to="/" className="btn bitcount-single text-xl gap-1 border-0 bg-transparent hover:bg-transparent"> 
           <img src="/images/logo.png" alt="GamersIntel Logo" className="w-10 h-10"/>
           <span className="text-primary font-extrabold text-2xl">Gamers</span><span className="text-secondary font-extrabold text-2xl">Intel</span>
                   <HiLightningBolt className="text-cyan-400 text-xl animate-pulse hidden sm:block" />
 
-        </Link>
+        </NavLink>
       </div>
 
       {/* Center Menu - Desktop */}
@@ -38,13 +38,7 @@ const Navbar = () => {
           <li>
             <NavLink 
               to="/" 
-              className={({ isActive }) => 
-                `font-bold uppercase tracking-wide transition-all duration-300 ${
-                  isActive 
-                    ? 'text-purple-400 bg-purple-500/20 border-b-2 border-purple-400' 
-                    : 'text-gray-300 hover:text-purple-400 hover:bg-purple-500/10'
-                }`
-              }
+              className="font-bold"
             >
               Home
             </NavLink>
@@ -52,13 +46,7 @@ const Navbar = () => {
           <li>
             <NavLink 
               to="/about" 
-              className={({ isActive }) => 
-                `font-bold uppercase tracking-wide transition-all duration-300 ${
-                  isActive 
-                    ? 'text-purple-400 bg-purple-500/20 border-b-2 border-purple-400' 
-                    : 'text-gray-300 hover:text-purple-400 hover:bg-purple-500/10'
-                }`
-              }
+              className="font-bold" 
             >
               About
             </NavLink>
@@ -90,22 +78,22 @@ const Navbar = () => {
               </li>
               <div className="divider my-1"></div>
               <li>
-                <Link to="/dashboard" className="text-gray-300 hover:text-purple-400 hover:bg-purple-500/20 transition-colors">
+                <NavLink to="/dashboard" className="text-gray-300 hover:text-purple-400 hover:bg-purple-500/20 transition-colors">
                   <MdDashboard className="text-lg" />
                   Dashboard
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link to="/profile" className="text-gray-300 hover:text-purple-400 hover:bg-purple-500/20 transition-colors">
+                <NavLink to="/profile" className="text-gray-300 hover:text-purple-400 hover:bg-purple-500/20 transition-colors">
                   <FaUser className="text-lg" />
                   Profile
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link to="/messages" className="text-gray-300 hover:text-purple-400 hover:bg-purple-500/20 transition-colors">
+                <NavLink to="/messages" className="text-gray-300 hover:text-purple-400 hover:bg-purple-500/20 transition-colors">
                   <MdMessage className="text-lg" />
                   Messages
-                </Link>
+                </NavLink>
               </li>
               <div className="divider my-1"></div>
               <li>

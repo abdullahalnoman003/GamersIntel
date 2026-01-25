@@ -30,3 +30,6 @@
     "ELSH" 0,
     "ELXP" 0;
 }
+a.active{
+  @apply  text-primary;
+}

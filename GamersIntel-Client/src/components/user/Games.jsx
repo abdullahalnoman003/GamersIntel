@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { FaSearch, FaGamepad, FaStar, FaCalendar, FaPlaystation, FaXbox, FaWindows, FaApple } from 'react-icons/fa';
+import { FaSearch, FaGamepad, FaStar, FaCalendar, FaPlaystation, FaXbox, FaWindows, FaApple, FaPlus } from 'react-icons/fa';
 import { SiNintendoswitch } from 'react-icons/si';
 import { HiLightningBolt } from 'react-icons/hi';
 import useRAWG from '../../Hooks/useRAWG';
 import toast from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 
 const Games = () => {
     const [games, setGames] = useState([]);
@@ -98,10 +99,7 @@ const Games = () => {
                         </div>
                         
                         <h1 className="poetsen-one-regular text-4xl md:text-6xl text-white mb-4">
-                            DISCOVER{' '}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                                GAMES
-                            </span>
+                            DISCOVER GAMES
                         </h1>
                         
                         <p className="galdeano-regular text-lg text-gray-400 max-w-2xl mx-auto mb-8">
@@ -110,18 +108,18 @@ const Games = () => {
 
                         {/* Search Bar */}
                         <form onSubmit={handleSearch} className="max-w-2xl mx-auto">
-                            <div className="flex items-center bg-gray-900/80 border border-purple-500/40 rounded-lg p-4 hover:border-purple-500/60 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300">
+                            <div className="flex items-center bg-gray-900/80 border border-purple-500/40 rounded-lg p-4 hover:border-purple-500/60 transition-colors duration-200">
                                 <FaSearch className="text-purple-400 text-xl mr-3" />
                                 <input 
                                     type="text" 
                                     placeholder="Search for games (e.g., 'The Witcher 3', 'Minecraft'...)"
-                                    className="flex-1 bg-transparent text-white placeholder-gray-500 outline-none"
+                                    className="flex-1 bg-transparent text-white placeholder-gray-500 outline-none galdeano-regular"
                                     value={searchQuery}
                                     onChange={(e) => setSearchQuery(e.target.value)}
                                 />
                                 <button 
                                     type="submit"
-                                    className="ml-3 px-6 py-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-lg text-white font-bold transition-all duration-300"
+                                    className="ml-3 px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg text-white galdeano-regular font-bold transition-colors"
                                 >
                                     Search
                                 </button>
@@ -153,7 +151,7 @@ const Games = () => {
                                 {games.map((game) => (
                                     <div 
                                         key={game.id}
-                                        className="bg-gray-900/50 border border-purple-500/30 rounded-xl overflow-hidden hover:border-purple-500/60 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 cursor-pointer group"
+                                        className="bg-gray-900/50 border border-purple-500/30 rounded-xl overflow-hidden hover:border-purple-500/60 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 cursor-pointer group"
                                     >
                                         {/* Game Image */}
                                         <div className="relative h-48 overflow-hidden bg-gray-800">
@@ -161,7 +159,7 @@ const Games = () => {
                                                 <img 
                                                     src={game.background_image} 
                                                     alt={game.name}
-                                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                                                 />
                                             ) : (
                                                 <div className="w-full h-full flex items-center justify-center">
@@ -180,7 +178,7 @@ const Games = () => {
 
                                         {/* Game Info */}
                                         <div className="p-4">
-                                            <h3 className="text-white font-bold text-lg mb-2 line-clamp-1 group-hover:text-purple-400 transition-colors">
+                                            <h3 className="text-white galdeano-regular font-bold text-lg mb-2 line-clamp-1 group-hover:text-purple-400 transition-colors">
                                                 {game.name}
                                             </h3>
                                             
@@ -202,25 +200,36 @@ const Games = () => {
                                             </div>
 
                                             {/* Genres */}
-                                            <div className="flex flex-wrap gap-2">
+                                            <div className="flex flex-wrap gap-2 mb-3">
                                                 {game.genres?.slice(0, 2).map((genre) => (
                                                     <span 
                                                         key={genre.id}
-                                                        className="px-2 py-1 bg-purple-500/20 border border-purple-500/30 rounded text-purple-300 text-xs"
+                                                        className="px-2 py-1 bg-purple-500/20 border border-purple-500/30 rounded text-purple-300 text-xs galdeano-regular"
                                                     >
                                                         {genre.name}
                                                     </span>
                                                 ))}
                                             </div>
 
-                                            {/* Add to Library Button */}
-                                            <button 
-                                                className="w-full mt-4 px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-lg text-white font-bold text-sm transition-all duration-300 flex items-center justify-center gap-2"
-                                                onClick={() => toast.success(`Added ${game.name} to library!`)}
-                                            >
-                                                <FaGamepad />
-                                                Add to Library
-                                            </button>
+                                            {/* Buttons */}
+                                            <div className="space-y-2">
+                                                <Link to={`/games/${game.id}`} className="block">
+                                                    <button 
+                                                        className="w-full px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg text-white galdeano-regular font-bold text-sm transition-all duration-200 flex items-center justify-center gap-2 hover:scale-[1.02]"
+                                                    >
+                                                        <FaGamepad />
+                                                        View Details
+                                                    </button>
+                                                </Link>
+                                                
+                                                <button 
+                                                    className="w-full px-4 py-2 bg-gray-800 hover:bg-gray-700 border border-purple-500/30 hover:border-purple-500/60 rounded-lg text-white galdeano-regular font-bold text-sm transition-all duration-200 flex items-center justify-center gap-2 hover:scale-[1.02]"
+                                                    onClick={() => toast.success(`Added ${game.name} to library!`)}
+                                                >
+                                                    <FaPlus />
+                                                    Add to Library
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 ))}
@@ -232,7 +241,7 @@ const Games = () => {
                                     <button
                                         onClick={loadMore}
                                         disabled={loading}
-                                        className="px-10 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-lg hover:scale-105 hover:shadow-xl hover:shadow-purple-500/50 text-white font-bold uppercase tracking-wider transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-3 mx-auto"
+                                        className="px-10 py-4 bg-purple-600 hover:bg-purple-700 rounded-lg text-white galdeano-regular font-bold uppercase tracking-wider transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-3 mx-auto hover:scale-105 hover:shadow-lg hover:shadow-purple-500/30"
                                     >
                                         {loading ? (
                                             <>

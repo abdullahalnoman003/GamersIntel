@@ -84,7 +84,7 @@ const router = createBrowserRouter([
         },
         {
             path:"/games/:id",
-            element: <PrivateRoute><GamesDetails></GamesDetails></PrivateRoute> ,
+            element: <GamesDetails></GamesDetails>,
         },
         {
             path:"/*",

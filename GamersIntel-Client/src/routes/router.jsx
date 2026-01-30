@@ -9,7 +9,6 @@ import Features from "../components/home/Features";
 import CTA from "../components/home/CTA";
 import PublicRoute from "../Authentication/PublicRoute";
 import Dashboard from "../components/user/Dashboard";
-import Profile from "../components/user/Profile";
 import Messages from "../components/user/Messages";
 import ForgotPassword from "../components/Registration/ForgotPassword";
 import About from "../components/Static/About";
@@ -20,6 +19,7 @@ import FAQ from "../components/Static/FAQ";
 import Games from "../components/user/Games";
 import PrivateRoute from "../Authentication/PrivateRoute";
 import GamesDetails from "../components/user/GamesDetails";
+import Profile from "../components/user/Profile";
 const router = createBrowserRouter([
 {
     path:"/",

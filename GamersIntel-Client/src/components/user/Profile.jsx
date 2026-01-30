@@ -213,7 +213,7 @@ const Profile = () => {
               {/* Gaming Stats */}
               <div className="space-y-3">
                 <div className="flex items-center gap-3 p-3 bg-purple-500/10 border border-purple-500/20 rounded-lg hover:bg-purple-500/20 transition-all duration-300 group cursor-pointer">
-                  <FaTrophy className="text-yellow-400 text-xl group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" />
+                  <FaTrophy className="text-yellow-400 text-xl " />
                   <div className="flex-1">
                     <p className="galdeano-regular text-xs text-gray-400">Member Since</p>
                     <p className="galdeano-regular font-semibold text-white text-sm">{formatDate(userProfile.joinDate)}</p>
@@ -221,7 +221,7 @@ const Profile = () => {
                 </div>
                 
                 <div className="flex items-center gap-3 p-3 bg-purple-500/10 border border-purple-500/20 rounded-lg hover:bg-purple-500/20 transition-all duration-300 group cursor-pointer">
-                  <FaGamepad className="text-cyan-400 text-xl group-hover:scale-110 group-hover:-rotate-12 transition-all duration-300" />
+                  <FaGamepad className="text-cyan-400 text-xl  " />
                   <div className="flex-1">
                     <p className="galdeano-regular text-xs text-gray-400">Platforms</p>
                     <p className="galdeano-regular font-semibold text-white text-sm">{userProfile.platforms.length || 0} Connected</p>
@@ -229,7 +229,7 @@ const Profile = () => {
                 </div>
 
                 <div className="flex items-center gap-3 p-3 bg-purple-500/10 border border-purple-500/20 rounded-lg hover:bg-purple-500/20 transition-all duration-300 group cursor-pointer">
-                  <div className="text-pink-400 text-xl group-hover:scale-110 transition-all duration-300">🎮</div>
+                  <div className="text-pink-400 text-xl">🎮</div>
                   <div className="flex-1">
                     <p className="galdeano-regular text-xs text-gray-400">Favorite Genres</p>
                     <p className="galdeano-regular font-semibold text-white text-sm">{userProfile.favoriteGenres.length || 0} Selected</p>
@@ -272,7 +272,7 @@ const Profile = () => {
             <div className="bg-gradient-to-br from-gray-900/80 to-gray-900/40 border border-purple-500/30 rounded-2xl p-6 hover:border-purple-500/60 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-500 backdrop-blur-sm">
               <div className="mb-8">
                 <h3 className="poetsen-one-regular text-2xl text-white mb-2 flex items-center gap-3 group">
-                  <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-md">
+                  <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center shadow-md">
                     <FaUser className="text-white" />
                   </div>
                   <span className="group-hover:text-purple-400 transition-colors duration-300">Gamer Information</span>
@@ -306,7 +306,7 @@ const Profile = () => {
                   {/* Gamer Tag */}
                   <div className="w-full group">
                     <label className="galdeano-regular text-sm font-semibold text-purple-400 mb-2 flex items-center gap-2 group-hover:text-pink-400 transition-colors duration-300">
-                      <FaGamepad className="text-xs group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" /> Gamer Tag
+                      <FaGamepad className="text-xs " /> Gamer Tag
                     </label>
                     {isEditing ? (
                       <input
@@ -358,7 +358,7 @@ const Profile = () => {
                 {/* Gaming Platforms */}
                 <div className="w-full group">
                   <label className="galdeano-regular text-sm font-semibold text-purple-400 mb-3 flex items-center gap-2 group-hover:text-pink-400 transition-colors duration-300">
-                    <FaGamepad className="text-xs group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" /> Gaming Platforms
+                    <FaGamepad className="text-xs " /> Gaming Platforms
                   </label>
                   {isEditing ? (
                     <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
@@ -409,7 +409,7 @@ const Profile = () => {
                 {/* Favorite Genres */}
                 <div className="w-full group">
                   <label className="galdeano-regular text-sm font-semibold text-purple-400 mb-3 flex items-center gap-2 group-hover:text-pink-400 transition-colors duration-300">
-                    <FaTrophy className="text-xs group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" /> Favorite Genres
+                    <FaTrophy className="text-xs " /> Favorite Genres
                   </label>
                   {isEditing ? (
                     <div className="flex flex-wrap gap-2">

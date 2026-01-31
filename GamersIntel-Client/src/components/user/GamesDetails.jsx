@@ -15,6 +15,11 @@ const GamesDetails = () => {
     const [showFullDescription, setShowFullDescription] = useState(false);
     const axiosRAWG = useRAWG();
 
+    // Scroll to top when page loads
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     useEffect(() => {
         fetchGameDetails();
     }, [id]);
@@ -72,7 +77,7 @@ const GamesDetails = () => {
                     <FaGamepad className="text-6xl text-gray-600 mx-auto mb-4" />
                     <h2 className="text-2xl font-bold text-white mb-2">Game Not Found</h2>
                     <button 
-                        onClick={() => navigate('/games')}
+                        onClick={() => navigate(-1)}
                         className="mt-4 px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg text-white font-bold transition-all"
                     >
                         Back to Games
@@ -98,7 +103,7 @@ const GamesDetails = () => {
                 <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-end pb-8">
                     {/* Back Button */}
                     <button 
-                        onClick={() => navigate('/games')}
+                        onClick={() => navigate(-1)}
                         className="absolute top-8 left-8 flex items-center gap-2 px-4 py-2 bg-black/50 hover:bg-black/70 backdrop-blur-sm border border-purple-500/30 hover:border-purple-500/60 rounded-lg text-white transition-all duration-300"
                     >
                         <FaArrowLeft /> Back to Games

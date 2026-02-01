@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
+const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const port = process.env.PORT || 3000;
 const app = express();
 
@@ -16,30 +16,61 @@ const client = new MongoClient(uri, {
     version: ServerApiVersion.v1,
     strict: true,
     deprecationErrors: true,
-  }
+  },
 });
 
 async function run() {
   try {
+    const userCollection = client.db("userDB").collection("users");
+    // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< USER CREATION AND INFORMATION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    
+    app.post("/users", async (req, res) => {
+      try {
+        const userInfo = req.body;
+        const userExist = await userCollection.findOne({
+          email: userInfo.email,
+        });
 
+        if (userExist) {
+          return res.status(200).send({
+            message: "User Already Exist",
+          });
+        }
+        const newUser = {
+          name: userInfo.name || null,
+          email: userInfo.email,
+          photoURL: userInfo.photoURL || null,
+          gamerTag: userInfo.gamerTag || null,
+          bio: userInfo.bio || null,
+          favoriteGenres: userInfo.favoriteGenres || null,
+          platforms: userInfo.platforms || null,
+          country: userInfo.country || null,
+          joinDate: userInfo.joinDate || new Date().toISOString(),
+          lastLogin: userInfo.joinDate || new Date().toISOString(),
+        };
+        const result = await userCollection.insertOne(newUser);
+        res.status(201).send({
+          message: "User created successfully",
+        });
+      } catch (err) {
+        console.error("DB error:", err);
+        res.status(500).send({ error: "Failed to save user" });
+      }
+    });
+
+    app.get("/users", async (req, res) => {
+      const result = await userCollection.find().toArray();
+      res.send(result);
+    });
   } finally {
   }
 }
 run().catch(console.dir);
 
-app.get('/', (req, res) => {
-    res.send("GameStack is running");
+app.get("/", (req, res) => {
+  res.send("Gamers Intel Server is running");
 });
 
-app.get('/health', async (req, res) => {
-    try {
-        await client.db("admin").command({ ping: 1 });
-        res.json({ status: 'healthy', database: 'connected' });
-    } catch (error) {
-        res.status(503).json({ status: 'unhealthy', database: 'disconnected', error: error.message });
-    }
-});
-
-app.listen(port, () =>{
-    console.log(`server is running at port ${port}`);
+app.listen(port, () => {
+  console.log(`server is running at port ${port}`);
 });

@@ -8,7 +8,6 @@ import toast, { Toaster } from "react-hot-toast";
 import { useState } from "react";
 import { FaEye, FaEyeSlash, FaGamepad, FaTrophy } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { HiLightningBolt } from "react-icons/hi";
 import { auth } from "../../Firebase/firebase.init";
 
 const LoginPage = () => {
@@ -16,23 +15,43 @@ const provider = new GoogleAuthProvider();
 const navigate = useNavigate();
 const location = useLocation();
 const from = location.state?.from?.pathname || "/";
+const [loading, setLoading] = useState(false);
 const [showPassword, setShowPassword] = useState(false);
+
+
+  if (loading) {
+    return (
+      <div className="h-screen flex items-center justify-center">
+        <div className="text-center">
+          <span className="loading loading-bars loading-lg text-primary"></span>
+          <p className="text-xl font-semibold text-primary mt-4">
+            Logging in... Please wait.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
 const handleGoogleSignIn = () => {
+  setLoading(true);
     signInWithPopup(auth, provider)
     .then(() => {
         toast.success("Login Successful! ");
         setTimeout(() => {
             navigate(from, { replace: true });
         }, 1000);
-    })
+    }
+  )
     .catch((error) => {
         toast.error(error.message || "Google sign-in failed", );
-    });
+    })
+    .finally(() => setLoading(false));
 };
 const handleEmailLogin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
+    setLoading(true);
     sessionStorage.setItem("ResetEmail", email);
 
     signInWithEmailAndPassword(auth, email, password)
@@ -44,7 +63,8 @@ const handleEmailLogin = (e) => {
       })
       .catch((error) => {
         toast.error(error.message);
-      });
+      })
+      .finally(() => setLoading(false));
 };
 
 return (

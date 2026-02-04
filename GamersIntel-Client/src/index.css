@@ -1,8 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&family=Creepster&family=Galdeano&family=Poetsen+One&display=swap');
 @import "tailwindcss";
  @plugin "daisyui" {
-   themes: abyss --default;
+   themes: GamersIntel --default;
  }
+ 
+
+@plugin "daisyui/theme" {
+  name: "GamersIntel";
+  default: true;
+  prefersdark: true;
+  color-scheme: "dark";
+  --color-base-100: oklch(16% 0.032 265.75);
+  --color-base-200: oklch(20% 0.028 265.75);
+  --color-base-300: oklch(24% 0.024 265.75);
+  --color-base-content: oklch(95% 0.012 265.75);
+  --color-primary: oklch(65% 0.29 293);
+  --color-primary-content: oklch(98% 0.01 293);
+  --color-secondary: oklch(72% 0.24 195);
+  --color-secondary-content: oklch(16% 0.02 195);
+  --color-accent: oklch(68% 0.26 328);
+  --color-accent-content: oklch(98% 0.01 328);
+  --color-neutral: oklch(32% 0.028 265.75);
+  --color-neutral-content: oklch(92% 0.01 265.75);
+  --color-info: oklch(68% 0.22 240);
+  --color-info-content: oklch(16% 0.02 240);
+  --color-success: oklch(70% 0.21 150);
+  --color-success-content: oklch(16% 0.02 150);
+  --color-warning: oklch(78% 0.19 85);
+  --color-warning-content: oklch(20% 0.02 85);
+  --color-error: oklch(62% 0.26 25);
+  --color-error-content: oklch(98% 0.01 25);
+  --radius-selector: 1rem;
+  --radius-field: 0.75rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0.5;
+  --noise: 0;
+}
+
+
 
 html {
   scroll-behavior: smooth;

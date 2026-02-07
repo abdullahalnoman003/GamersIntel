@@ -81,26 +81,25 @@ const LoginPage = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-gradient-to-b from-base-300 via-base-100 to-base-300 flex justify-center items-center py-10 px-4 relative overflow-hidden">
+      <div className="min-h-screen bg-linear-to-b from-base-300 via-base-100 to-base-300 flex justify-center items-center py-10 px-4 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-20 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-3xl"></div>
           <div className="absolute bottom-20 right-20 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-3xl"></div>
         </div>
 
         <div className="grid md:grid-cols-2 shadow-2xl bg-base-100/90 backdrop-blur-xl rounded-3xl border border-primary/30 max-w-4xl w-full overflow-hidden relative z-10">
-          <div className="hidden md:flex bg-gradient-to-b from-primary to-primary relative overflow-hidden items-center justify-center p-10">
-            <div className="absolute inset-0 bg-base-100/20"></div>
-
+          <div className="hidden md:flex bg-linear-to-b from-primary to-primary relative overflow-hidden items-center justify-center p-10">
+            <div className="absolute inset-0 bg-black/50 z-1 overflow-hidden"></div>
             <img
               src="/images/loginImg.jpg"
               alt="Gaming"
-              className="absolute inset-0 w-full h-full object-cover opacity-80"
+              className="absolute inset-0 w-full h-full object-cover "
             />
 
             <div className="relative z-10 text-center space-y-6">
               <FaGamepad className="text-8xl text-primary-content/90 mx-auto" />
-              <h2 className="text-4xl font-black text-primary-content uppercase tracking-wider">
-                GamersIntel
+              <h2 className="text-4xl uppercase font-bold bitcount-single tracking-wider">
+                <span className='text-primary'>Gamers</span><span className='text-secondary'>Intel</span>
               </h2>
               <p className="text-base text-accent">Your Gaming Memory System</p>
             </div>
@@ -111,7 +110,7 @@ const LoginPage = () => {
           </div>
 
           {/* Right Side - Login Form */}
-          <div className="p-10 bg-gradient-to-b from-base-100 to-base-300">
+          <div className="p-10 bg-linear-to-b from-base-100 to-base-300">
             <div className="text-center mb-8">
               <h1 className="text-3xl font-extrabold text-base-content mb-2">
                 Welcome Back

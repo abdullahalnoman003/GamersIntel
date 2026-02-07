@@ -19,15 +19,6 @@ const Hero = () => {
             {/* The dark overlay of a */}
             <div className="absolute inset-0 bg-linear-to-b from-base-100/50 via-base-100/70 to-base-100"></div>
 
-            {/* Subtle Grid Background */}
-            <div className="absolute inset-0 opacity-10" style={{
-                backgroundImage: `
-                    linear-gradient(rgba(147, 51, 234, 0.1) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(147, 51, 234, 0.1) 1px, transparent 1px)
-                `,
-                backgroundSize: '50px 50px'
-            }}></div>
-
             {/* Gentle Background Glow */}
             <div className="absolute inset-0 opacity-20">
                 <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary rounded-full filter blur-3xl"></div>
@@ -80,28 +71,7 @@ const Hero = () => {
                 {/* Clean CTA Buttons */}
                 
                
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-                    
-                    {   
-                        user ? (
-                            <Link 
-                        to="/dashboard" 
-                        className="px-10 py-4 bg-linear-to-r creepster-regular from-primary to-accent  hover:shadow-xl hover:shadow-primary/50 text-primary-content font-bold  tracking-wider transition-all duration-300 flex items-center gap-3 rounded-lg"
-                    >
-                        <FaGamepad className="text-xl" />
-                        Go to Dashboard
-                    </Link>
-                        ) : (
-                            <Link 
-                        to="/registration" 
-                        className="px-10 py-4 bg-linear-to-r creepster-regular from-primary to-accent  hover:shadow-xl hover:shadow-primary/50 text-primary-content font-bold  tracking-wider transition-all duration-300 flex items-center gap-3 rounded-lg"
-                    >
-                        <FaGamepad className="text-xl" />
-                        Join Free
-                    </Link>
-                        )
-                    }
-                </div>
+               
 
                 {/* Simple Trust Indicators */}
                 <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-base-content/60">

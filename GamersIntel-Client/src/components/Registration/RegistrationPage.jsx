@@ -182,12 +182,15 @@ const RegistrationPage = () => {
               alt="Gaming"
               className="absolute inset-0 w-full h-full object-cover opacity-80"
             />
-
+            <div className="absolute inset-0 bg-black/50  overflow-hidden"></div>
             {/* Content */}
-            <div className="relative z-10 text-center space-y-6">
-              <FaTrophy className="text-8xl text-accent mx-auto animate-pulse" />
-              <h2 className="text-4xl font-black text-primary-content uppercase tracking-wider">
-                Join GamersIntel
+            <div className="relative  text-center space-y-6">
+              
+              <FaTrophy className="text-8xl text-secondary mx-auto " />
+              <h2 className="text-4xl font-black  text-primary-content uppercase tracking-wider">
+                Join <br/>
+
+                <span className="text-primary bitcount-single">Gamers</span><span className="text-secondary bitcount-single">Intel</span>
               </h2>
               <p className="text-base text-accent">
                 Track, Rate & Remember Every Game

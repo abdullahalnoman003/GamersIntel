@@ -6,6 +6,7 @@ import { MdLocalActivity } from 'react-icons/md';
 import { HiLightningBolt } from 'react-icons/hi';
 import useRAWG from '../../Hooks/useRAWG';
 import toast from 'react-hot-toast';
+import ImageWithLoader from '../common/ImageWithLoader';
 
 const GamesDetails = () => {
     const { id } = useParams();
@@ -91,11 +92,16 @@ const GamesDetails = () => {
             {/* Hero Section with Background */}
             <div className="relative h-125 overflow-hidden">
                 {/* Background Image */}
-                <div 
-                    className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: `url(${game.background_image_additional})` }}
-                >
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/80 to-black"></div>
+                <div className="absolute inset-0">
+                    <ImageWithLoader
+                        src={game.background_image_additional || game.background_image}
+                        alt={`${game.name} background`}
+                        className="w-full h-full object-cover"
+                        containerClassName="w-full h-full"
+                        loaderClassName="rounded-none"
+                        fallbackSrc={game.background_image}
+                    />
+                    <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/80 to-black"></div>
                 </div>
 
                 {/* Content */}
@@ -165,9 +171,13 @@ const GamesDetails = () => {
                         </div>
                         </div>
                         <div className='flex items-center max-md:flex-col'>
-                            <img src={game.background_image} 
-                            alt={`${game.name} screenshot`}
-                            className="w-60 m-5 rounded-2xl border-2 shadow-2xl shadow-primary-content" />
+                            <ImageWithLoader
+                                src={game.background_image}
+                                alt={`${game.name} cover`}
+                                className="w-60 m-5 rounded-2xl border-2 shadow-2xl shadow-primary-content"
+                                containerClassName="w-60 m-5"
+                                loaderClassName="rounded-2xl"
+                            />
                         </div>
                         </div>
 

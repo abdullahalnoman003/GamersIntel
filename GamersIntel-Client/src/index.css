@@ -3,7 +3,6 @@
  @plugin "daisyui" {
    themes: GamersIntel --default;
  }
- 
 @plugin "daisyui/theme" {
   name: "GamersIntel";
   default: true;
@@ -40,8 +39,6 @@
   --depth: 1;
   --noise: 0;
 }
-
-
 
 
 

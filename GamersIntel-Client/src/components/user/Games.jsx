@@ -16,6 +16,7 @@ import useRAWG from "../../Hooks/useRAWG";
 import toast from "react-hot-toast";
 import { Link, useSearchParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
+import ImageWithLoader from "../common/ImageWithLoader";
 
 const Games = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -41,7 +42,7 @@ const Games = () => {
     if (searchQuery) params.search = searchQuery;
     if (page > 1) params.page = page.toString();
     setSearchParams(params, { replace: true });
-  }, [searchQuery, page]);
+  }, [searchQuery, page,setSearchParams]);
 
   // Function to fetch games from RAWG API Takes search query and page number from queryKey
   const fetchGames = async ({ queryKey }) => {
@@ -195,10 +196,12 @@ const Games = () => {
                         {/* Game Image */}
                     <div className="relative h-48 overflow-hidden bg-base-200">
                       {game.background_image ? (
-                        <img
+                        <ImageWithLoader
                           src={game.background_image}
                           alt={game.name}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          containerClassName="w-full h-full"
+                          loaderClassName="rounded-none"
                         />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center">

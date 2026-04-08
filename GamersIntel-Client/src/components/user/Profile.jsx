@@ -153,7 +153,7 @@ const Profile = () => {
             <h1 className="poetsen-one-regular text-4xl md:text-5xl text-base-content mb-3 relative z-10">
               MY PROFILE
             </h1>
-            <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-secondary rounded-full opacity-70"></div>
+            <div className="absolute -bottom-2 left-0 right-0 h-1 bg-linear-to-r from-primary via-accent to-secondary rounded-full opacity-70"></div>
           </div>
           <p className="galdeano-regular text-base-content/60 text-lg mt-6">
             Manage your gaming profile and preferences
@@ -163,11 +163,11 @@ const Profile = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Profile Card */}
           <div className="lg:col-span-1">
-            <div className="bg-gradient-to-br from-base-200/80 to-base-200/40 border border-primary/30 rounded-2xl p-6 hover:border-primary/60 hover:shadow-lg hover:shadow-primary/10 transition-all duration-500 backdrop-blur-sm">
+            <div className="bg-linear-to-br from-base-200/80 to-base-200/40 border border-primary/30 rounded-2xl p-6 hover:border-primary/60 hover:shadow-lg hover:shadow-primary/10 transition-all duration-500 backdrop-blur-sm">
               {/* Profile Header */}
               <div className="text-center mb-6">
                 <div className="relative inline-block group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-secondary rounded-full blur-md opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-linear-to-r from-primary via-accent to-secondary rounded-full blur-md opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
                   <div className="relative w-32 h-32 mx-auto rounded-full bg-primary/20 p-1 ring-2 ring-primary/50">
                     <img
                       src={userProfile.photoURL || `https://ui-avatars.com/api/?name=${encodeURIComponent(userProfile.displayName || 'User')}&background=9333ea&color=fff&size=128`}
@@ -178,14 +178,6 @@ const Profile = () => {
                       }}
                     />
                   </div>
-                  {isEditing && (
-                    <button 
-                      className="absolute bottom-0 right-0 w-10 h-10 bg-primary hover:bg-primary/90 rounded-full flex items-center justify-center text-base-content transition-all duration-300 shadow-lg hover:shadow-primary/50 hover:rotate-12"
-                      title="Upload profile picture"
-                    >
-                      <FaCamera className="text-sm" />
-                    </button>
-                  )}
                 </div>
                 <h2 className="poetsen-one-regular text-2xl text-base-content mt-4 hover:text-primary transition-colors duration-300">
                   {userProfile.displayName || "Gamer"}
@@ -199,14 +191,14 @@ const Profile = () => {
               </div>
 
               {/* Profile Completion Progress */}
-              <div className="mb-4 p-4 bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 rounded-lg">
+              <div className="mb-4 p-4 bg-linear-to-r from-primary/10 to-secondary/10 border border-primary/20 rounded-lg">
                 <div className="flex items-center justify-between mb-2">
                   <p className="galdeano-regular text-xs text-base-content/60">Profile Completion</p>
                   <p className="galdeano-regular font-bold text-base-content text-sm">{getProfileCompletion()}%</p>
                 </div>
                 <div className="w-full h-2 bg-base-300 rounded-full overflow-hidden">
                   <div 
-                    className="h-full bg-gradient-to-r from-primary via-accent to-secondary rounded-full transition-all duration-500 ease-out"
+                    className="h-full bg-linear-to-r from-primary via-accent to-secondary rounded-full transition-all duration-500 ease-out"
                     style={{ width: `${getProfileCompletion()}%` }}
                   ></div>
                 </div>
@@ -244,7 +236,7 @@ const Profile = () => {
                 {!isEditing ? (
                   <button
                     onClick={() => setIsEditing(true)}
-                    className="w-full px-6 py-3 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 rounded-lg text-base-content galdeano-regular font-bold transition-all duration-300 flex items-center justify-center gap-2 shadow-md hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5 active:translate-y-0">
+                    className="w-full px-6 py-3 bg-linear-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 rounded-lg text-base-content galdeano-regular font-bold transition-all duration-300 flex items-center justify-center gap-2 shadow-md hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5 active:translate-y-0">
                   
                     <FaEdit className="group-hover:rotate-12 transition-transform" /> Edit Profile
                   </button>
@@ -253,8 +245,7 @@ const Profile = () => {
                     <button
                       onClick={handleSaveProfile}
                       disabled={loading}
-                      className="flex-1 px-6 py-3 bg-success hover:bg-success/90 rounded-lg text-base-content galdeano-regular font-bold transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 shadow-md hover:shadow-lg hover:shadow-success/30 hover:-translate-y-0.5 active:translate-y-0">
-                    
+                      className="flex-1 px-6 py-3 bg-success hover:bg-success/90 rounded-lg text-black galdeano-regular font-bold transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 shadow-md hover:shadow-lg hover:shadow-success/30 hover:-translate-y-0.5 active:translate-y-0 ">
                       <FaSave className={loading ? "animate-pulse" : ""} /> {loading ? "Saving..." : "Save"}
                     </button>
                     <button
@@ -271,15 +262,15 @@ const Profile = () => {
 
           {/* Profile Information */}
           <div className="lg:col-span-2">
-            <div className="bg-gradient-to-br from-base-200/80 to-base-200/40 border border-primary/30 rounded-2xl p-6 hover:border-primary/60 hover:shadow-lg hover:shadow-primary/10 transition-all duration-500 backdrop-blur-sm">
+            <div className="bg-linear-to-br from-base-200/80 to-base-200/40 border border-primary/30 rounded-2xl p-6 hover:border-primary/60 hover:shadow-lg hover:shadow-primary/10 transition-all duration-500 backdrop-blur-sm">
               <div className="mb-8">
                 <h3 className="poetsen-one-regular text-2xl text-base-content mb-2 flex items-center gap-3 group">
-                  <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center shadow-md">
+                  <div className="w-10 h-10 bg-linear-to-br from-primary to-accent rounded-lg flex items-center justify-center shadow-md">
                     <FaUser className="text-base-content" />
                   </div>
                   <span className="group-hover:text-primary transition-colors duration-300">Gamer Information</span>
                 </h3>
-                <div className="h-0.5 w-24 bg-gradient-to-r from-primary to-transparent rounded-full animate-pulse"></div>
+                <div className="h-0.5 w-24 bg-linear-to-r from-primary to-transparent rounded-full animate-pulse"></div>
               </div>
 
               <div className="space-y-7">
@@ -374,7 +365,7 @@ const Profile = () => {
                             onClick={() => togglePlatform(platform.name)}
                             className={`p-4 rounded-lg border-2 transition-all duration-300 flex flex-col items-center gap-2 hover:scale-105 active:scale-95 ${
                               isSelected
-                                ? 'bg-gradient-to-br from-primary to-accent border-primary text-base-content shadow-lg shadow-primary/30 animate-in'
+                                ? 'bg-linear-to-br from-primary to-accent border-primary text-base-content shadow-lg shadow-primary/30 animate-in'
                                 : 'bg-base-300 border-primary/30 text-base-content/60 hover:border-primary/60 hover:shadow-md'
                             }`}
                             title={`Click to ${isSelected ? 'disconnect' : 'connect'} ${platform.name}`}
@@ -394,7 +385,7 @@ const Profile = () => {
                           return (
                             <div
                               key={platform}
-                              className="px-4 py-2 bg-gradient-to-r from-primary/20 to-accent/20 border border-primary/30 rounded-lg text-primary galdeano-regular flex items-center gap-2 hover:border-primary/50 transition-all duration-300">
+                              className="px-4 py-2 bg-linear-to-r from-primary/20 to-accent/20 border border-primary/30 rounded-lg text-primary galdeano-regular flex items-center gap-2 hover:border-primary/50 transition-all duration-300">
                             
                               <Icon className="text-sm group-hover:scale-110 transition-transform" />
                               <span className="text-sm">{platform}</span>
@@ -424,7 +415,7 @@ const Profile = () => {
                             onClick={() => toggleGenre(genre)}
                             className={`px-4 py-2 rounded-lg border transition-all duration-300 galdeano-regular text-sm hover:scale-105 active:scale-95 ${
                               isSelected
-                                ? 'bg-gradient-to-r from-secondary to-info border-secondary text-base-content shadow-lg shadow-secondary/30 animate-in'
+                                ? 'bg-linear-to-r from-secondary to-info border-secondary text-base-content shadow-lg shadow-secondary/30 animate-in'
                                 : 'bg-base-300 border-primary/30 text-base-content/60 hover:border-primary/60 hover:shadow-md'
                             }`}
                             title={`Click to ${isSelected ? 'remove' : 'add'} ${genre}`}
@@ -440,7 +431,7 @@ const Profile = () => {
                         userProfile.favoriteGenres.map((genre) => (
                           <div
                             key={genre}
-                            className="px-4 py-2 bg-gradient-to-r from-secondary/20 to-info/20 border border-secondary/30 rounded-lg text-secondary galdeano-regular text-sm hover:border-secondary/50 transition-all duration-300">
+                            className="px-4 py-2 bg-linear-to-r from-secondary/20 to-info/20 border border-secondary/30 rounded-lg text-secondary galdeano-regular text-sm hover:border-secondary/50 transition-all duration-300">
                           
                             {genre}
                           </div>
